@@ -1,0 +1,2 @@
+mouseHovering = false;
+teamsReady = false;

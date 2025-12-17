@@ -1,0 +1,1 @@
+team2ChangeCooldown = false;
