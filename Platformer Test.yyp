@@ -61,7 +61,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.1.210",
+    "IDEVersion":"2024.14.2.213",
   },
   "name":"Platformer Test",
   "resources":[
@@ -96,6 +96,7 @@
     {"id":{"name":"room_game_menu","path":"rooms/room_game_menu/room_game_menu.yy",},},
     {"id":{"name":"room_platformer1","path":"rooms/room_platformer1/room_platformer1.yy",},},
     {"id":{"name":"room_reassign_teams","path":"rooms/room_reassign_teams/room_reassign_teams.yy",},},
+    {"id":{"name":"room_spike_stomp","path":"rooms/room_spike_stomp/room_spike_stomp.yy",},},
     {"id":{"name":"bottom_side","path":"sprites/bottom_side/bottom_side.yy",},},
     {"id":{"name":"bottomleft_corner","path":"sprites/bottomleft_corner/bottomleft_corner.yy",},},
     {"id":{"name":"bottomright_corner","path":"sprites/bottomright_corner/bottomright_corner.yy",},},
@@ -155,6 +156,7 @@
     {"roomId":{"name":"room_game_menu","path":"rooms/room_game_menu/room_game_menu.yy",},},
     {"roomId":{"name":"room_platformer1","path":"rooms/room_platformer1/room_platformer1.yy",},},
     {"roomId":{"name":"room_reassign_teams","path":"rooms/room_reassign_teams/room_reassign_teams.yy",},},
+    {"roomId":{"name":"room_spike_stomp","path":"rooms/room_spike_stomp/room_spike_stomp.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

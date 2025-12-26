@@ -60,6 +60,44 @@ check_collisions = function(changeX, changeY) {
 		}
 	}
 	
+	if room == room_spike_stomp {
+		if place_meeting(x, y - 20, obj_platformer_player1) && obj_platformer_player1.velocityY < -5 {
+				obj_game_manager.p4Health -= 1;
+				show_debug_message("Step");
+			
+				if obj_platformer_player1.velocityY < -12 {
+					obj_game_manager.p4Health -= 2;
+					show_debug_message("Stomp");
+				}
+		
+			obj_platformer_player1.velocityY = 0;
+		}
+		
+		if place_meeting(x, y - 20, obj_platformer_player2) && obj_platformer_player2.velocityY < -5 {
+				obj_game_manager.p4Health -= 1;
+				show_debug_message("Step");
+			
+				if obj_platformer_player2.velocityY < -12 {
+					obj_game_manager.p4Health -= 2;
+					show_debug_message("Stomp");
+				}
+		
+			obj_platformer_player2.velocityY = 0;
+		}
+		
+		if place_meeting(x, y - 20, obj_platformer_player3) && obj_platformer_player3.velocityY < -5 {
+				obj_game_manager.p4Health -= 1;
+				show_debug_message("Step");
+			
+				if obj_platformer_player3.velocityY < -12 {
+					obj_game_manager.p4Health -= 2;
+					show_debug_message("Stomp");
+				}
+		
+			obj_platformer_player3.velocityY = 0;
+		}
+	}
+	
 	collidedBomb = instance_place(x, y + changeY, obj_bomb);
 	
 	if collidedBomb != noone {

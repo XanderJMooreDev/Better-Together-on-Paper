@@ -12,3 +12,7 @@ if room == room_game_menu {
 		change_player_hat(4, 1);
 	}
 }
+
+if room == room_spike_stomp {
+	
+}

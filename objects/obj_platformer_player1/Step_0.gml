@@ -66,7 +66,6 @@ if keyboard_check(downCommand) {
 		mask_index = crouchSprite;
 	}
 	else if check_collisions(0, -12) {
-		show_debug_message(coyoteTime);
 		mask_index = standSprite;
 		crouching = false;
 	}
