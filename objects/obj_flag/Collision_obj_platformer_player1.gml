@@ -5,6 +5,7 @@ if obj_game_manager.gameStarted {
 	else {
 		obj_game_manager.team2Score++;
 	}
+	
 	obj_game_manager.gameStarted = false;
 	
 	lastWinner = obj_game_manager.player1Team;

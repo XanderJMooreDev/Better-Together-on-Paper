@@ -69,6 +69,11 @@ locate_players = function(collidedPlayerTeam) {
 	
 	alarm[0] = 1;
 	
+	if room == room_spike_stomp {
+		x = 1088;
+		y = 320;
+	}
+	
 	if celebration == 1 {
 		loserSlot1.x = x;
 		loserSlot1.y = y;
@@ -78,5 +83,9 @@ locate_players = function(collidedPlayerTeam) {
 		loserSlot2.y = y;
 		victorySlot2.x = x + 32;
 		victorySlot2.y = y - 64;
+	}
+	
+	if room == room_spike_stomp {
+		x += 2000;
 	}
 }

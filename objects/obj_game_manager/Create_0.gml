@@ -1,10 +1,10 @@
 team1Score = 0;
 team2Score = 0;
 
-p1Health = 0;
-p2Health = 0;
-p3Health = 0;
-p4Health = 0;
+p1Health = 10;
+p2Health = 10;
+p3Health = 10;
+p4Health = 10;
 
 player1Team = 1;
 player2Team = 2;
