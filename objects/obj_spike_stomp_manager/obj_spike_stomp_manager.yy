@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"bottomright_corner",
-    "path":"sprites/bottomright_corner/bottomright_corner.yy",
+    "name":"spr_team_platform",
+    "path":"sprites/spr_team_platform/spr_team_platform.yy",
   },
   "spriteMaskId":null,
   "visible":true,
