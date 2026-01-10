@@ -1,4 +1,4 @@
-visible = false;
+image_alpha = 0;
 
 check_if_team_wins = function(playerA, playerB, playerATeam, playerBTeam) {
 	if !obj_game_manager.gameStarted {
@@ -29,6 +29,4 @@ check_if_team_wins = function(playerA, playerB, playerATeam, playerBTeam) {
 			obj_flag.locate_players(1);
 		}
 	}
-	
-	
 }
