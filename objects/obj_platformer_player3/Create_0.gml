@@ -102,7 +102,14 @@ check_collisions = function(changeX, changeY) {
 	if collidedBomb != noone {
 		if collidedBomb.image_blend != hat.color && collidedBomb.sprite_index == spr_collision {
 			instance_destroy(collidedBomb);
-			death_respawn();
+			
+			if room == room_platformer1 {
+				death_respawn();
+			}
+			else {
+				obj_game_manager.p3Health -= 3;
+			}
+			
 			layer_set_visible("Screenshake", false);
 		}
 	}
