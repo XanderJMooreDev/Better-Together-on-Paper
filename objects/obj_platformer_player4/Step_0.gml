@@ -144,6 +144,15 @@ if check_collisions(0, -velocityY) {
 		}
 	}
 }
+else if velocityY < 0 {
+	if velocityY < -12 && keyboard_check(downCommand) {
+		obj_screenshake_manager.shake();
+	}
+	
+	
+	velocityY = 0;
+	coyoteTime = 0;
+}
 else {
 	velocityY = 0;
 	coyoteTime = 0;

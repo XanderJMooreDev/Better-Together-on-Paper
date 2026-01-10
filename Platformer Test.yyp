@@ -83,6 +83,7 @@
     {"id":{"name":"obj_platformer_player4","path":"objects/obj_platformer_player4/obj_platformer_player4.yy",},},
     {"id":{"name":"obj_point_box1","path":"objects/obj_point_box1/obj_point_box1.yy",},},
     {"id":{"name":"obj_point_box2","path":"objects/obj_point_box2/obj_point_box2.yy",},},
+    {"id":{"name":"obj_screenshake_manager","path":"objects/obj_screenshake_manager/obj_screenshake_manager.yy",},},
     {"id":{"name":"obj_spike_stomp_manager","path":"objects/obj_spike_stomp_manager/obj_spike_stomp_manager.yy",},},
     {"id":{"name":"obj_sweat_beads_left","path":"objects/obj_sweat_beads_left/obj_sweat_beads_left.yy",},},
     {"id":{"name":"obj_sweat_beads_right","path":"objects/obj_sweat_beads_right/obj_sweat_beads_right.yy",},},
