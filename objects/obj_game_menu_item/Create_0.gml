@@ -14,3 +14,8 @@ if id == 100015 {
 	sprite_index = Sprite5;
 	roomMap = room_spike_stomp;
 }
+
+if id == 100017 {
+	sprite_index = Sprite5;
+	roomMap = room_ping_pong;
+}

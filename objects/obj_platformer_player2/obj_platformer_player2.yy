@@ -10,8 +10,8 @@
   "name":"obj_platformer_player2",
   "overriddenProperties":[],
   "parent":{
-    "name":"Players",
-    "path":"folders/Objects/Players.yy",
+    "name":"Platformer Moveset",
+    "path":"folders/Objects/Players/Platformer Moveset.yy",
   },
   "parentObjectId":null,
   "persistent":false,

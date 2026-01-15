@@ -45,15 +45,15 @@ else {
 	velocityY -= WEIGHT;
 }
 
-if keyboard_check(leftCommand) {
+if leftCommand {
 	joystick -= 1;
 }
 
-if keyboard_check(rightCommand) {
+if rightCommand {
 	joystick += 1;
 }
 
-if keyboard_check(downCommand) {
+if downCommand {
 	if coyoteTime < 10 {
 		joystick = 0;
 		crouching = true;
@@ -72,7 +72,7 @@ if keyboard_check(downCommand) {
 }
 else {
 	if check_collisions(0, -12) {
-	mask_index = standSprite;
+		mask_index = standSprite;
 		crouching = false;
 	}
 	else if walkFrame == 0 && crouching {
@@ -122,7 +122,7 @@ else {
 	velocityX = 0;
 }
 
-if keyboard_check(upCommand) && coyoteTime < 7 {
+if upCommand && coyoteTime < 7 {
 	velocityY = JUMP_STRENGTH;
 }
 
@@ -148,7 +148,7 @@ if check_collisions(0, -velocityY) {
 	}
 }
 else if velocityY < 0 {
-	if velocityY < -12 && keyboard_check(downCommand) {
+	if velocityY < -12 && downCommand {
 		obj_screenshake_manager.shake();
 	}
 	
@@ -174,7 +174,7 @@ else {
 if bombTime > 0 {
 	bombTime -= 1 / game_get_speed(gamespeed_fps);
 }
-else if keyboard_check(bombCommand) && obj_game_manager.bombsOn {
+else if bombCommand && obj_game_manager.bombsOn {
 	bombTime = 5;
 	throw_bomb();
 }
