@@ -14,26 +14,10 @@ if room == room_game_menu {
 }
 
 if room == room_spike_stomp {
-	if p1Health <= 0 && obj_platformer_player1.y > 400 {
-		obj_platformer_player1.x = 1088;
-		obj_platformer_player1.y = 256;
-	}
-	
-	
-	if p2Health <= 0 && obj_platformer_player2.y > 400 {
-		obj_platformer_player2.x = 1088;
-		obj_platformer_player2.y = 256;
-	}
-	
-	
-	if p3Health <= 0 && obj_platformer_player3.y > 400 {
-		obj_platformer_player3.x = 1088;
-		obj_platformer_player3.y = 256;
-	}
-	
-	
-	if p4Health <= 0 && obj_platformer_player4.y > 400 {
-		obj_platformer_player4.x = 1088;
-		obj_platformer_player4.y = 256;
+	for (i = 0; i < array_length(im.players); i++) {
+		if im.healths[i] <= 0 && im.players[i].y > 400 {
+			im.players[i].x = 1088;
+			im.players[i].y = 256;
+		}
 	}
 }

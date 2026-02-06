@@ -14,6 +14,10 @@ walkFrame = 0;
 animationSpeed = 10;
 crouching = false;
 
+gm = obj_game_manager;
+
+playerID = 0;
+
 standSprite = spr_p1_stand;
 preJumpSprite = spr_p1_pre_jump;
 jumpSprite = spr_p1_jump;
@@ -28,72 +32,50 @@ bombCommand = ord("E");
 
 terrain_tiles = layer_tilemap_get_id("Collision");
 hat = instance_create_layer(x, y, "Hats", obj_teamhat);
-hat.player = obj_platformer_player1;
-if obj_game_manager.player1Team == 1 {
-	hat.color = obj_game_manager.teamColor1;
+hat.player = self;
+
+if gm.teamNums[playerID] == 1 {
+	hat.color = gm.teamColor1;
 }
 else {
-	hat.color = obj_game_manager.teamColor2;
+	hat.color = gm.teamColor2;
 }
 
-hat.sprite = ds_list_find_value(obj_game_manager.playerHats, obj_game_manager.playerHatIDs[1]);
+hat.sprite = ds_list_find_value(gm.playerHats, gm.playerHatIDs[1]);
 
 check_collisions = function(changeX, changeY) {
 	if place_meeting(x + changeX, y + changeY, obj_team_platform) {
 		if x < 1000 {
-			obj_game_manager.player1Team = 1;
-			hat.image_blend = obj_game_manager.teamColor1;
+			gm.teamNums[playerID] = 1;
+			hat.image_blend = gm.teamColor1;
 		}
 		else {
-			obj_game_manager.player1Team = 2;
-			hat.image_blend = obj_game_manager.teamColor2;
+			gm.teamNums[playerID] = 2;
+			hat.image_blend = gm.teamColor2;
 		}
 	}
 	
 	if place_meeting(x, y + changeY, obj_team_color_change_box) && changeY != -12 {
 		if x < 1000 {
-			obj_game_manager.change_team_color_1();
+			gm.change_team_color_1();
 		}
 		else {
-			obj_game_manager.change_team_color_2();
+			gm.change_team_color_2();
 		}
 	}
 	
 	if room == room_spike_stomp {
-		if place_meeting(x, y - 20, obj_platformer_player2) && obj_platformer_player2.velocityY < -5 {
-				obj_game_manager.p1Health -= 1;
-				show_debug_message("Step");
-			
-				if obj_platformer_player2.velocityY < -12 {
-					obj_game_manager.p1Health -= 2;
-					show_debug_message("Stomp");
+		im = obj_instance_manager;
+		for (i = 0; i < array_length(im.players); i++) {
+			if place_meeting(x, y - 20, im.players[i] && im.players[i].velocityY < -5) {
+				gm.healths[playerID] -= 1;
+				
+				if im.players[i].velocityY < -12 {
+					gm.healths[playerID] -= 2;
 				}
-		
-			obj_platformer_player2.velocityY = 0;
-		}
-		
-		if place_meeting(x, y - 20, obj_platformer_player3) && obj_platformer_player3.velocityY < -5 {
-				obj_game_manager.p1Health -= 1;
-				show_debug_message("Step");
-			
-				if obj_platformer_player3.velocityY < -12 {
-					obj_game_manager.p1Health -= 2;
-					show_debug_message("Stomp");
-				}
-		
-			obj_platformer_player3.velocityY = 0;
-		}
-		
-		if place_meeting(x, y - 20, obj_platformer_player4) && obj_platformer_player4.velocityY < -5 {
-				obj_game_manager.p1Health -= 1;
-				show_debug_message("Step");
-			
-				if obj_platformer_player4.velocityY < -12 {
-					obj_game_manager.p1Health -= 2;
-					show_debug_message("Stomp");
-				}
-		
-			obj_platformer_player4.velocityY = 0;
+				
+				im.players[i].velocityY = 0;
+			}
 		}
 	}
 	
@@ -107,7 +89,7 @@ check_collisions = function(changeX, changeY) {
 				death_respawn();
 			}
 			else {
-				obj_game_manager.p1Health -= 3;
+				gm.healths[playerID] -= 3;
 			}
 			
 			layer_set_visible("Screenshake", false);
@@ -115,22 +97,20 @@ check_collisions = function(changeX, changeY) {
 	}
 	
 	return !place_meeting(x + changeX, y + changeY, terrain_tiles) 
-	&& !place_meeting(x + changeX, y + changeY, obj_platformer_player2) 
-	&& !place_meeting(x + changeX, y + changeY, obj_platformer_player3) 
-	&& !place_meeting(x + changeX, y + changeY, obj_platformer_player4) 
+	&& !place_meeting(x + changeX, y + changeY, obj_platformer_player1)
 	&& !place_meeting(x + changeX, y + changeY, obj_team_color_change_box)
 	&& !place_meeting(x + changeX, y + changeY, obj_team_platform);
 }
 
 throw_bomb = function() {
 	bomb = instance_create_layer(x + 16, y, "Instances", obj_bomb);
-	bomb.friendly = obj_game_manager.player1Team;
+	bomb.friendly = gm.teamNums[playerID];
 	
-	if obj_game_manager.player1Team == 1 {
-		bomb.color = obj_game_manager.teamColor1;
+	if gm.teamNums[playerID] == 1 {
+		bomb.color = gm.teamColor1;
 	}
 	else {
-		bomb.color = obj_game_manager.teamColor2;
+		bomb.color = gm.teamColor2;
 	}
 	
 	if joystick == 0 {

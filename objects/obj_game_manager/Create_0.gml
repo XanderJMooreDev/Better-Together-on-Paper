@@ -1,10 +1,16 @@
+im = obj_instance_manager;
+
 team1Score = 0;
 team2Score = 0;
+
+healths = [ 10, 10, 10, 10 ];
 
 p1Health = 10;
 p2Health = 10;
 p3Health = 10;
 p4Health = 10;
+
+teamNums = [ 1, 2, 1, 2 ];
 
 player1Team = 1;
 player2Team = 2;
@@ -113,6 +119,16 @@ change_team_color_2 = function() {
 }
 
 update_hat_colors = function() {
+	// Refactored Code: Implement when switched to teamNums
+	//for (i = 0; i < array_length(im.players); i++) {
+	//	if teamNums[i] == 1 {
+	//		im.players[i].hat.image_blend = teamColor1;
+	//	}
+	//	else {
+	//		im.players[i].hat.image_blend = teamColor2;
+	//	}
+	//}
+	
 	if player1Team == 1 {
 		obj_platformer_player1.hat.image_blend = teamColor1;
 	}

@@ -3,8 +3,8 @@ if walkFrame >= 4 {
 	walkFrame = 0;
 }
 
-if !obj_game_manager.gameStarted {
-	if obj_game_manager.player1Team == obj_flag.lastWinner {
+if !gm.gameStarted {
+	if gm.teamNums[playerID] == obj_flag.lastWinner {
 		if obj_flag.celebrateSpriteWin == "Crouch" {
 			sprite_index = crouchSprite;
 		}
@@ -169,7 +169,7 @@ else {
 if bombTime > 0 {
 	bombTime -= 1 / game_get_speed(gamespeed_fps);
 }
-else if bombCommand && obj_game_manager.bombsOn {
+else if bombCommand && gm.bombsOn {
 	bombTime = 5;
 	throw_bomb();
 }

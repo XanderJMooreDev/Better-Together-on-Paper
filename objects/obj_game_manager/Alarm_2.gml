@@ -1,35 +1,10 @@
-if obj_platformer_player1.hat.image_blend == teamColor1 {
-	obj_platformer_player1.x = 64;
-	obj_platformer_player1.y = 1024;
-}
-else {
-	obj_platformer_player1.x = 2176;
-	obj_platformer_player1.y = 1024;
-}
-
-if obj_platformer_player2.hat.image_blend == teamColor1 {
-	obj_platformer_player2.x = 128;
-	obj_platformer_player2.y = 1024;
-}
-else {
-	obj_platformer_player2.x = 2112;
-	obj_platformer_player2.y = 1024;
-}
-
-if obj_platformer_player3.hat.image_blend == teamColor1 {
-	obj_platformer_player3.x = 192;
-	obj_platformer_player3.y = 1024;
-}
-else {
-	obj_platformer_player3.x = 2048;
-	obj_platformer_player3.y = 1024;
-}
-
-if obj_platformer_player4.hat.image_blend == teamColor1 {
-	obj_platformer_player4.x = 256;
-	obj_platformer_player4.y = 1024;
-}
-else {
-	obj_platformer_player4.x = 1984;
-	obj_platformer_player4.y = 1024;
+for (i = 0; i < array_length(im.players); i++) {
+	if teamNums[i] == 1 {
+		players[i].x = 64 + (64 * i);
+	}
+	else {
+		players[i].x = 2176 + (64 * i);
+	}
+	
+	players[i].y = 1024;
 }

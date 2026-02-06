@@ -4,6 +4,7 @@ if room == room_platformer1 {
 
 if room == room_spike_stomp {
 	gameStarted = false;
+	healths = [ 10, 10, 10, 10 ];
 	p1Health = 10;
 	p2Health = 10;
 	p3Health = 10;
@@ -12,6 +13,7 @@ if room == room_spike_stomp {
 
 if room == room_reassign_teams {
 	gameStarted = true;
+	healths = [ 10, 10, 10, 10 ];
 	p1Health = 10;
 	p2Health = 10;
 	p3Health = 10;
