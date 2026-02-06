@@ -19,3 +19,8 @@ if id == 100017 {
 	sprite_index = Sprite5;
 	roomMap = room_ping_pong;
 }
+
+if id == 100018 {
+	sprite_index = Sprite5;
+	roomMap = room_jetpack_shootout;
+}

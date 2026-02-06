@@ -19,6 +19,7 @@ preJumpSprite = spr_p1_pre_jump;
 jumpSprite = spr_p1_jump;
 crouchSprite = spr_p1_crouch;
 
+// Default values, rewritten in obj_controller_manager
 upCommand = ord("W");
 leftCommand = ord("A");
 rightCommand = ord("D");

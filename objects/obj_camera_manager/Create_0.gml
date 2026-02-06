@@ -35,15 +35,15 @@ check_corners = function(player) {
 }
 
 default_camera = function() {
-	minX = obj_platformer_player1.x;
-	maxX = obj_platformer_player1.x;
-	minY = obj_platformer_player1.y;
-	maxY = obj_platformer_player1.y;
+	minX = obj_controller_manager.players[0].x;
+	maxX = obj_controller_manager.players[0].x;
+	minY = obj_controller_manager.players[0].y;
+	maxY = obj_controller_manager.players[0].y;
 
-	check_corners(obj_platformer_player1);
-	check_corners(obj_platformer_player2);
-	check_corners(obj_platformer_player3);
-	check_corners(obj_platformer_player4);
+	check_corners(obj_controller_manager.players[0]);
+	check_corners(obj_controller_manager.players[1]);
+	check_corners(obj_controller_manager.players[2]);
+	check_corners(obj_controller_manager.players[3]);
 
 	if minX < camera_border_x {
 		minX = camera_border_x;

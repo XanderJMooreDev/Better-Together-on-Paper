@@ -3,11 +3,6 @@ if walkFrame >= 4 {
 	walkFrame = 0;
 }
 
-if keyboard_check(vk_backspace) {
-	x = 626;
-	y = 135;
-}
-
 if !obj_game_manager.gameStarted {
 	if obj_game_manager.player1Team == obj_flag.lastWinner {
 		if obj_flag.celebrateSpriteWin == "Crouch" {

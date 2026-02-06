@@ -2,7 +2,7 @@ if room == room_game_menu {
 	return;
 }
 
-for (i = 0; i < 4; i++) {
+for (i = 0; i < array_length(players); i++) {
 	if controller_modes[i] == "Key" {
 		players[i].upCommand = keyboard_check(up_controls[i]);
 		players[i].downCommand = keyboard_check(down_controls[i]);
