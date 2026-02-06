@@ -1,16 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_point_box1",
+  "%Name":"obj_ping_pong_ball",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_point_box1",
+  "name":"obj_ping_pong_ball",
   "overriddenProperties":[],
   "parent":{
-    "name":"Point Boxes",
-    "path":"folders/Objects/UI/Point Boxes.yy",
+    "name":"Elements",
+    "path":"folders/Objects/Elements.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_point_box",
-    "path":"sprites/spr_point_box/spr_point_box.yy",
+    "name":"spr_ball",
+    "path":"sprites/spr_ball/spr_ball.yy",
   },
   "spriteMaskId":null,
   "visible":true,

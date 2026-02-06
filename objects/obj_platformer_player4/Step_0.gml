@@ -61,14 +61,13 @@ if downCommand {
 		mask_index = crouchSprite;
 	}
 	else if check_collisions(0, -12) {
-		show_debug_message(coyoteTime);
 		mask_index = standSprite;
 		crouching = false;
 	}
 }
 else {
 	if check_collisions(0, -12) {
-	mask_index = standSprite;
+		mask_index = standSprite;
 		crouching = false;
 	}
 	else if walkFrame == 0 && crouching {
@@ -126,7 +125,6 @@ if check_collisions(velocityX, 0) {
 	x += velocityX;
 }
 
-
 if check_collisions(0, -velocityY) {
 	y -= velocityY;
 	
@@ -149,33 +147,15 @@ else if velocityY < 0 {
 		obj_screenshake_manager.shake();
 	}
 	
-	
 	velocityY = 0;
 	coyoteTime = 0;
 }
 else {
 	velocityY = 0;
-	coyoteTime = 0;
 }
 
 if y > 1300 {
-	blinkTime = 3;
-	if check_collisions(RESPAWN_X - x, RESPAWN_Y - y) {
-		x = RESPAWN_X;
-		y = RESPAWN_Y;
-	}
-	else if check_collisions(RESPAWN_X + 64 - x, RESPAWN_Y - y) {
-		x = RESPAWN_X + 64;
-		y = RESPAWN_Y;
-	}
-	else if check_collisions(RESPAWN_X + 128 - x, RESPAWN_Y - y) {
-		x = RESPAWN_X + 128;
-		y = RESPAWN_Y;
-	}
-	else {
-		x = RESPAWN_X + 196;
-		y = RESPAWN_Y;
-	}
+	death_respawn();
 }
 
 if blinkTime > 0 {
