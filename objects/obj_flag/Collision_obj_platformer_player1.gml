@@ -1,5 +1,5 @@
 if obj_game_manager.gameStarted {
-	if obj_game_manager.player1Team == 1 {
+	if obj_game_manager.teamNums[other.playerID] == 1 {
 		obj_game_manager.team1Score++;
 	}
 	else {
@@ -8,9 +8,9 @@ if obj_game_manager.gameStarted {
 	
 	obj_game_manager.gameStarted = false;
 	
-	lastWinner = obj_game_manager.player1Team;
+	lastWinner = obj_game_manager.teamNums[other.playerID];
 	celebration = 1;
 	countdownTime = 6;
 	
-	locate_players(obj_game_manager.player1Team);
+	locate_players(obj_game_manager.teamNums[other.playerID]);
 }

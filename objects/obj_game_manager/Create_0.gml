@@ -119,41 +119,12 @@ change_team_color_2 = function() {
 }
 
 update_hat_colors = function() {
-	// Refactored Code: Implement when switched to teamNums
-	//for (i = 0; i < array_length(im.players); i++) {
-	//	if teamNums[i] == 1 {
-	//		im.players[i].hat.image_blend = teamColor1;
-	//	}
-	//	else {
-	//		im.players[i].hat.image_blend = teamColor2;
-	//	}
-	//}
-	
-	if player1Team == 1 {
-		obj_platformer_player1.hat.image_blend = teamColor1;
-	}
-	else {
-		obj_platformer_player1.hat.image_blend = teamColor2;
-	}
-	
-	if player2Team == 1 {
-		obj_platformer_player2.hat.image_blend = teamColor1;
-	}
-	else {
-		obj_platformer_player2.hat.image_blend = teamColor2;
-	}
-	
-	if player3Team == 1 {
-		obj_platformer_player3.hat.image_blend = teamColor1;
-	}
-	else {
-		obj_platformer_player3.hat.image_blend = teamColor2;
-	}
-	
-	if player4Team == 1 {
-		obj_platformer_player4.hat.image_blend = teamColor1;
-	}
-	else {
-		obj_platformer_player4.hat.image_blend = teamColor2;
+	for (i = 0; i < array_length(im.players); i++) {
+		if teamNums[i] == 1 {
+			im.players[i].hat.image_blend = teamColor1;
+		}
+		else {
+			im.players[i].hat.image_blend = teamColor2;
+		}
 	}
 }

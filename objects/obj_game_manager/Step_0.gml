@@ -15,7 +15,7 @@ if room == room_game_menu {
 
 if room == room_spike_stomp {
 	for (i = 0; i < array_length(im.players); i++) {
-		if im.healths[i] <= 0 && im.players[i].y > 400 {
+		if healths[i] <= 0 && im.players[i].y > 400 {
 			im.players[i].x = 1088;
 			im.players[i].y = 256;
 		}
