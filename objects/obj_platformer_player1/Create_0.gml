@@ -67,7 +67,7 @@ check_collisions = function(changeX, changeY) {
 	if room == room_spike_stomp {
 		im = obj_instance_manager;
 		for (i = 0; i < array_length(im.players); i++) {
-			if place_meeting(x, y - 20, im.players[i] && im.players[i].velocityY < -5) {
+			if place_meeting(x, y - 20, im.players[i]) && im.players[i].velocityY < -5 {
 				gm.healths[playerID] -= 1;
 				
 				if im.players[i].velocityY < -12 {
